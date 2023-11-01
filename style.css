@@ -39,6 +39,10 @@ body {
 .board .dropBox:nth-child(9) {
   border-bottom: none;
 }
+.board .dropBox div {
+  pointer-events: none;
+  scale: 1.5;
+}
 
 .drag {
   position: relative;
@@ -58,7 +62,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.drag .dragBox .cross {
+.cross {
   position: relative;
   width: 50px;
   height: 50px;
@@ -67,7 +71,7 @@ body {
   align-items: center;
 }
 
-.drag .dragBox .cross::before {
+.cross::before {
   content: "";
   position: absolute;
   width: 5px;
@@ -75,7 +79,7 @@ body {
   background: #fff;
   transform: rotate(45deg);
 }
-.drag .dragBox .cross::after {
+.cross::after {
   content: "";
   position: absolute;
   width: 5px;
@@ -84,10 +88,24 @@ body {
   transform: rotate(135deg);
 }
 
-.drag .dragBox .circle {
+.circle {
   position: relative;
   width: 50px;
   height: 50px;
   border: 5px solid #fff;
   border-radius: 50%;
+}
+
+.reset {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  background: #161616;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
 }
